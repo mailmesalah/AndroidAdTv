@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.lychee.sely.adstv.launcher.DashboardActivity">
+
+    <android.support.v17.leanback.widget.NonOverlappingFrameLayout
+        android:id="@+id/program_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Programs"
+            android:textSize="40sp" />
+    </android.support.v17.leanback.widget.NonOverlappingFrameLayout>
+
+    <LinearLayout
+        android:id="@+id/program_action"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/program_header"
+        android:orientation="horizontal"
+
+        >
+
+        <Button
+            android:id="@+id/add_stacked_ad_program"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:nextFocusDown="@+id/browse_fragment_program_dashboard"
+            android:nextFocusRight="@+id/add_scheduled_ad_program"
+            android:text="Add Stacked Ad Program" />
+
+        <Button
+            android:id="@+id/add_scheduled_ad_program"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:nextFocusDown="@+id/browse_fragment_program_dashboard"
+            android:nextFocusLeft="@+id/add_stacked_ad_program"
+            android:text="Add Scheduled Ad Program" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/program_action"
+        android:orientation="horizontal">
+
+        <android.support.v17.leanback.widget.ListRowView
+            android:id="@+id/browse_header_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/stacked_ad_menu"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STACKED AD PROGRAMS" />
+
+            <Button
+                android:id="@+id/scheduled_ad_menu"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SCHEDULED AD PROGRAMS" />
+
+            <Button
+                android:id="@+id/settings_menu"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SETTINGS" />
+
+            <Button
+                android:id="@+id/about_us_menu"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ABOUT US" />
+        </android.support.v17.leanback.widget.ListRowView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/text_view_dashboard_fragment_headers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="DASHBOARD" />
+
+                <FrameLayout
+                    android:id="@+id/fragment_dashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,64 @@
+<!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen"-->
+
+private EditText findInput(ViewGroup np) {
+        int count = np.getChildCount();
+        for (int i = 0; i < count; i++) {
+            final View child = np.getChildAt(i);
+            if (child instanceof ViewGroup) {
+                findInput((ViewGroup) child);
+            } else if (child instanceof EditText) {
+                return (EditText) child;
+            }
+        }
+        return null;
+    }
+
+
+  public void showDatePickerDialog() {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
+
+ public static class DatePickerFragment extends DialogFragment
+            implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+            TextView tvYear = (TextView) getActivity().findViewById(R.id.text_view_year);
+            TextView tvMonth = (TextView) getActivity().findViewById(R.id.text_view_month);
+            TextView tvDay = (TextView) getActivity().findViewById(R.id.text_view_day);
+            // Use the current date as the default date in the picker
+            final Calendar c = Calendar.getInstance();
+            int year, month, day;
+
+            if (tvYear.getText().toString().trim().length() > 0) {
+                year = Integer.parseInt(tvYear.getText().toString().trim());
+            } else {
+                year = c.get(Calendar.YEAR);
+            }
+
+            if (tvMonth.getText().toString().trim().length() > 0) {
+                month = Integer.parseInt(tvMonth.getText().toString().trim()) - 1;
+            } else {
+                month = c.get(Calendar.MONTH);
+            }
+
+            if (tvDay.getText().toString().trim().length() > 0) {
+                day = Integer.parseInt(tvDay.getText().toString().trim());
+            } else {
+                day = c.get(Calendar.DAY_OF_MONTH);
+            }
+
+
+            // Create a new instance of DatePickerDialog and return it
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        public void onDateSet(DatePicker view, int year, int month, int day) {
+            mtvYear.setText(year + "");
+            mtvMonth.setText((month + 1) + "");
+            mtvDay.setText(day + "");
+        }
+    }

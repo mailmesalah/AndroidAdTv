@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="selected_grid_item_background">#0096e6</color>
+    <color name="secondary_background">#1f1fff</color>
+    <color name="window_background">#0f0030</color>
+    <color name="search_opaque">#ffaa3f</color>
+</resources>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lychee.sely.adstv">
+
+    <!-- TV app need to declare touchscreen not required -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.faketouch"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:banner="@drawable/image_logo"
+        android:icon="@mipmap/ic_logo_transparent"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/NoTitleTheme">
+        <activity
+            android:name=".launcher.DashboardActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".launcher.detail.ProgramDetailActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".stackedadprogram.StackedAdProgramActivity"
+            android:exported="true"
+            android:theme="@style/NoTitleTheme" />
+        <activity
+            android:name=".scheduledadprogram.ScheduledAdProgramActivity"
+            android:exported="true"
+            android:theme="@style/NoTitleTheme" />
+        <activity
+            android:name=".extras.InputDialogActivity"
+            android:exported="true"
+            android:theme="@style/FilePickerTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".extras.ImageFilePickerActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/FilePickerTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".extras.VideoFilePickerActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/FilePickerTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ads.image.ImageAdActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".ads.video.VideoAdActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".ads.custom.CustomAdActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".extras.CreateProgramActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/FilePickerTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".storage.tables.contentprovider.ProgramAdContentProvider"
+            android:authorities="com.lychee.sely.adstv.contentprovider"
+            android:exported="false" />
+
+        <activity android:name=".ads.image.details.ImageAdDetailActivity" />
+        <activity android:name=".ads.video.details.VideoAdDetailActivity" />
+        <activity android:name=".ads.custom.details.CustomAdDetailActivity" />
+        <activity
+            android:name=".stackedadprogram.ads.StackedAdImageActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".stackedadprogram.ads.StackedAdVideoActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".stackedadprogram.detail.StackedDetailActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".scheduledadprogram.ads.ScheduledAdImageActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".scheduledadprogram.ads.ScheduledAdVideoActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".scheduledadprogram.ads.ScheduledAdCustomActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".scheduledadprogram.detail.ScheduledDetailActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+        <activity
+            android:name=".playermanager.PlayerActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".stackedadprogram.ads.StackedAdCustomActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback" />
+
+        <service
+            android:name=".playermanager.PlayerManagerService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":playerservice" />
+
+        <activity
+            android:name=".ads.custom.design.CustomAdDesignActivity"
+            android:exported="true"
+            android:theme="@style/NoTitleTheme" />
+        <activity android:name=".ads.custom.design.details.CustomAdDesignDetailActivity"/>
+        <activity
+            android:name=".ads.custom.design.preview.CustomAdDesignCanvasActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.AppCompact" />
+    </application>
+
+</manifest>

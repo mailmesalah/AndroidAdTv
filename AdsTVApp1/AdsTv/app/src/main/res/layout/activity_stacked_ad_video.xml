@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_stacked_video_ad"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.lychee.sely.adstv.stackedadprogram.ads.StackedAdVideoActivity">
+
+    <LinearLayout
+        android:id="@+id/stacked_video_ad_program_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Stacked Video Ad"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/stacked_video_ad_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stacked_video_ad_program_header"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v17.leanback.widget.ImageCardView
+                android:id="@+id/image_card_view_video"
+                android:layout_width="300dp"
+                android:layout_height="300dp" />
+
+            <Button
+                android:id="@+id/browse_stacked_ad_video"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Browse Video Ad" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_view_ad_name_stacked_ad_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="50dp"
+                android:text=""
+                android:padding="10dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:text="Hours" />
+
+                <EditText
+                    android:id="@+id/edit_text_stacked_ad_hours"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minutes" />
+
+                <EditText
+                    android:id="@+id/edit_text_stacked_ad_minutes"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seconds" />
+
+                <EditText
+                    android:id="@+id/edit_text_stacked_ad_seconds"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stacked_video_ad_data"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/create_stacked_ad_video"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create" />
+    </LinearLayout>
+</RelativeLayout>

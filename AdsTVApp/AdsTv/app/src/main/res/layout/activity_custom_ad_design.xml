@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_custom_ad_design"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.lychee.sely.adstv.ads.custom.design.CustomAdDesignActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.lychee.sely.adstv.ads.custom.design.view.CustomAdPreview
+                android:id="@+id/custom_ad_preview_view"
+                android:layout_width="800px"
+                android:layout_height="600px"
+                android:background="@color/lb_tv_white"
+                android:padding="10dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                   >
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ad Name"/>
+                    <EditText
+                        android:id="@+id/edit_text_custom_ad_name"
+                        android:layout_width="250dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="5dp" />
+
+
+                </LinearLayout>
+                <Button
+                    android:id="@+id/create_custom_ad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create Custom Ad"
+                    style="?android:attr/buttonBarButtonStyle"
+                    />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/custom_ad_detail_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/custom_ad_add_image_ad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Image Ad"
+                style="?android:attr/buttonBarButtonStyle"
+                />
+            <Button
+                android:id="@+id/custom_ad_add_video_ad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Video Ad"
+                style="?android:attr/buttonBarButtonStyle"
+                />
+            <Button
+                android:id="@+id/custom_ad_preview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preview"
+                style="?android:attr/buttonBarButtonStyle"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/custom_ad_detail_program_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@id/custom_ad_detail_action"
+            >
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                android:name="com.lychee.sely.adstv.ads.custom.design.CustomAdDesignFragment"
+                android:id="@+id/vertical_grid_fragment_custom_ad_design_items"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

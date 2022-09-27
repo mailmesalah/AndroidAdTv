@@ -1,0 +1,8 @@
+3) Settings for import export programs
+4) Logo , icon, color
+5) About us, Lychee Technologies
+8) lock
+9) remove all logs
+10) database onCreate and onUpgrade
+11)  mProgramID = getIntent().getLongExtra("PROGRAM_ID", 0); to  mProgramID = getIntent().getLongExtra("PROGRAM_ID", -1); similar changes and related changes in if checkings
+12) Proper navigation

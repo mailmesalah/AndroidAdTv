@@ -1,0 +1,2 @@
+Q)Two Fragments of an Activity (StackedAdProgramCardFragment & ScheduledAdProgramCardFragment) has same data or data being shared across while loading from database using getActivity().getSupportLoadManager().init()
+A)Loadmanager init method has same first argument which caused to share data, has to use different integer value there.
